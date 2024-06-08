@@ -46,11 +46,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (getitem(0) < 3)
+                if (getitem(0) < 2)
                     mSLideViewPager.setCurrentItem(getitem(1), true);
                 else {
 
-                    Intent i = new Intent(MainActivity.this, mainscreen.class);
+                    Intent i = new Intent(MainActivity.this, onboardinglast.class);
                     startActivity(i);
                     finish();
 
@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                Intent i = new Intent(MainActivity.this, mainscreen.class);
+                Intent i = new Intent(MainActivity.this, onboardinglast.class);
                 startActivity(i);
                 finish();
 
