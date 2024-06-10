@@ -29,22 +29,17 @@ public class MainActivity extends AppCompatActivity {
         nextbtn = findViewById(R.id.nextbtn);
         skipbtn = findViewById(R.id.skipButton);
 
-        backbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        backbtn.setOnClickListener(v -> {
 
                 if (getitem(0) > 0) {
 
                     mSLideViewPager.setCurrentItem(getitem(-1), true);
 
-                }
 
-            }
+                }
         });
 
-        nextbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        nextbtn.setOnClickListener(v -> {
 
                 if (getitem(0) < 2)
                     mSLideViewPager.setCurrentItem(getitem(1), true);
@@ -56,23 +51,21 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-            }
+
         });
 
-        skipbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        skipbtn.setOnClickListener(v -> {
 
 
                 Intent i = new Intent(MainActivity.this, onboardinglast.class);
                 startActivity(i);
                 finish();
 
-            }
+
         });
 
-        mSLideViewPager = (ViewPager) findViewById(R.id.slideViewPager);
-        mDotLayout = (LinearLayout) findViewById(R.id.indicator_layout);
+        mSLideViewPager = findViewById(R.id.slideViewPager);
+        mDotLayout = findViewById(R.id.indicator_layout);
 
         viewPagerAdapter = new ViewPagerAdapter(this);
 
